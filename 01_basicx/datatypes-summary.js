@@ -42,11 +42,39 @@ const myFunction = function(){
     
 }
 
-console.log(typeof myFunction);
-console.log(typeof heros);
-console.log(typeof myObj);
+// console.log(typeof myFunction);
+// console.log(typeof heros);
+// console.log(typeof myObj);
 
 
 // JavaScript is dynamically typed, which means that the interpreter assigns a variable's type at runtime based on the value of the variable.
 
 // datatype of non primitive for array and oobject is function and datatype of function if function object // dont know why but it is what it is. :)
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Stck (Primitive) and Heap (NonPrimitive)
+let myYuotubeName = "Two Ediots"
+
+let anotherName = myYuotubeName
+
+anotherName = "Three Ediots"
+
+console.log(myYuotubeName);
+console.log(anotherName);
+
+let userOne = {
+    name: "Prathmesh",
+    upi: "upi@01"
+}
+
+let userTwo = userOne
+
+userTwo.name = "Pawan"
+
+console.log(userOne);
+console.log(userTwo);
+
+// so what we learn here is in stack, 
+// when myYuotubeName = "Prath" and anotherName = myYoutubeName, anotherName gets copy of myYoutubeName so if we make any change in anotherName its copy getting changed not myYotubeName's value
+// in heap memory, when userOne = { name: "Prath" } and userTwo = usserOne then userTwo gets Reference of Value of userOne hence when we make any change calling any oof the variable tha value for both variable gets changed. hence output of userOne = userTwo.
