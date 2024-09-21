@@ -53,7 +53,7 @@ const myFunction = function(){
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Stck (Primitive) and Heap (NonPrimitive)
+// Stack (Primitive) and Heap (NonPrimitive)
 let myYuotubeName = "Two Ediots"
 
 let anotherName = myYuotubeName
