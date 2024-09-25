@@ -1,0 +1,78 @@
+Javascript execution context
+1. global execution context
+2. functional execution context
+3. eval execution context // this is the property of global execution
+
+Phases
+1. Memory creation Phase
+2. execution Phase
+
+example
+
+let val1 = 10
+let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+}
+let result1 = addNum(val1. val2)
+let result2 = addNum(10, 2)
+
+steps:-
+1. Global execution allocated in 'this'
+
+2. Memory phase:
+val1 -> undefined
+val2 -> undefined
+addNum -> function's defination
+result1 -> undefined
+result2 -> undefined
+
+execution phase:
+val1 -> 10
+val2 -> 5
+result1 -> now it creates new executional context for that function. it creates new variable environment + execution thread {
+    a. memory phase:
+    val1 -> undefined
+    val2 -> undefined
+    total -> undefined
+
+    b. execution context:
+    num1 -> 10
+    num2 -> 5
+    toal -> 15 // now this will be returned to global executional context
+    // after completion of execution this executional context is deleted 
+}
+result2 -> now it creates new executional context for that function. it creates new variable environment + execution thread {
+    a. memory phase:
+    num1 -> undefined
+    num2 -> undefined
+    toal -> undefined
+
+    b. execution context:
+    num1 -> 10
+    num2 -> 2
+    total -> 12// now this will be returned to global executional context
+    // after completion of execution this executional context is deleted
+}
+
+*** call stack ***
+
+1. global execution context
+2. one()
+
+// when funtion is performed it'll be removed from the stack
+
+example:
+one(two())
+two(three())
+three()
+
+call stack will look like this
+
+| three() |
+|  two()  |
+|  one()  |
+|Global EC|
+
+// now in lifo form function will get executed
+
