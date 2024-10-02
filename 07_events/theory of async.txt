@@ -1,0 +1,19 @@
+~JavaScript
+Synchronous
+Single Threaded
+
+~Execution context
+Execute one line of code at a time
+each operation waits for the last one to complete before executing
+1. call stack, memory heep
+
+~Blocking Code
+Block the flow of program
+Read file sync
+/useful when reading file
+
+~Non Blicking Code
+Does not block Execution
+Read file async
+/useful when writing into file
+
