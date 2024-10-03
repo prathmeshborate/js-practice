@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: hsl(0, 0%, 13%);">
+    <button id="show">Show Details</button>
+    <!-- <img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"> -->
+</body>
+<script>
+    /*
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+    */
+    const requestURL = 'https://api.github.com/users/prathmeshborate';
+    const XHR = new XMLHttpRequest();
+
+    document.querySelector('#show').addEventListener('click', function () {
+        XHR.open('GET', requestURL);
+        XHR.onreadystatechange = function () {
+            console.log(XHR.readyState);
+            if (XHR.readyState === 4 && XHR.status === 200) {
+                const data = JSON.parse(this.responseText);
+                
+                // Create a container div
+                const container = document.createElement('div');
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.alignItems = 'center';
+                container.style.marginTop = '20px';
+                
+                // Create and append image
+                const img = document.createElement('img');
+                img.setAttribute('src', data.avatar_url);
+                img.setAttribute('alt', 'User Avatar');
+                img.style.width = '150px';
+                img.style.height = '150px';
+                img.style.borderRadius = '50%';
+                img.style.marginBottom = '10px';
+                container.appendChild(img);
+                
+                // Create and append follower count
+                const followers = document.createElement('p');
+                followers.textContent = `Followers: ${data.followers}`;
+                followers.style.fontSize = '18px';
+                followers.style.fontWeight = 'bold';
+                followers.style.color = '#333';
+                container.appendChild(followers);
+                
+                // Append container to body
+                document.body.appendChild(container);
+            }
+        };
+        XHR.send();
+    });
+</script>
+</html>
