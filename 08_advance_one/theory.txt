@@ -7,3 +7,14 @@ fulfiled
 rejected
 
 Q and BlueBird are past libraries before Promise
+
+
+~Fetch()
+The global fetch() method starts the process of fetching a resource from the networ, returning a promise which is fulfilled once the response is available.
+
+Fetch creates micro task queue / prority queue this executes immediately.
+1. Data
+2. onFulfilled[]
+3. onRejection[]
+
+every response from web/ node (error code and results) are stored in onFulfilled array.
