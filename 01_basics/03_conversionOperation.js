@@ -23,14 +23,14 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 let someNumber = 33
 
 let stringNumber = String(someNumber)
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
+console.log(stringNumber);
+console.log(typeof stringNumber);
 
 
 // ******************************** OPERATIONS **********************************************
 let value = 3
 let negValue = -value
-// console.log(negValue);
+console.log(negValue);
 
 /*
 console.log(2+2);
@@ -51,15 +51,15 @@ console.log(1 + "2");
 console.log("1" + 2 + 2);
 console.log( 1 + 2 + "2");
 
-// in JS the, if string comes first then
+// in the JS, if string comes first then
 // all other datatypes coming after it is converted into string
 
 // console.log( ( 3 + 4 ) * 5 % 3);
 
 // to avoide it you can use circular bracket to run speccific line first.
-
-// console.log(+true);
-// console.log(+"");
+console.log(+'1'+1)
+console.log(+true);
+console.log(+"");
 
 let num1, num2, num3
 
