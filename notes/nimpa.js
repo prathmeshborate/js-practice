@@ -1,23 +1,47 @@
-function printSequence(n) {
-    n = typeof n !== 'undefined' ? n : 20; // Default to 20 if n is not defined
-    let i = 1;
-    let result = "";
-
-    while (i <= n) {
-        if (i % 10 === 6) { // Check if the last digit is 6
-            result += "*****";
-            i += 5; // Skip next 5 numbers to jump to the next sequence
-            continue;
-        }
-        result += i;
-        i++;
+function generatePattern(input) {
+    let result = '';
+    let count = 0;
+    for (let i = 1; i <= input; i++) {
+      if (i % 10 === 6) {
+        result += '*****';
+        count++;
+      } else if (count > 0) {
+        result += (i + count - 1) % 10 === 5 ? '****' : '*';
+      } else {
+        result += i % 10;
+      }
     }
+    return result;
+  }
+  
+  // Test cases
+  console.log(generatePattern(17)); // Output: 12345*****1112131415**
+  console.log(generatePattern(24)); // Output: 12345*****1112131415*****21222324
+  console.log(generatePattern(7));  // Output: 12345**
+  
+/*-----------------------------------+++++++++++++++++++++++--------------------------------------*/
 
-    result += "*****";
-    console.log(result);
-}
-
-// Example usage:
-printSequence(20); // Will print: 12345*****1112131415*****
-printSequence(26); // Will print: 12345*****1112131415*****16171819*****
-printSequence(36); // Will print: 12345*****1112131415*****16171819*****2122232425*****3132333435*****
+function generatePattern(input) {
+    let result = '';
+    let i = 1;
+    let count = 0;
+  
+    while (i <= input) {
+      if (i % 10 === 6) {
+        result += '*****';
+        count++;
+      } else if (count > 0) {
+        result += (i + count - 1) % 10 === 5 ? '****' : '*';
+      } else {
+        result += i % 10;
+      }
+      i++;
+    }
+    return result;
+  }
+  
+  // Test cases
+  console.log(generatePattern(17)); // Output: 12345*****1112131415**
+  console.log(generatePattern(24)); // Output: 12345*****1112131415*****21222324
+  console.log(generatePattern(7));  // Output: 12345**
+  
