@@ -3,7 +3,7 @@
 //Promise object is immutable
 //State :- Pending, Fulfilled, Rejected
 //Promise object contains:- Promise State, Promise Result
-//Whenever ther's promise inside promise chain then we need to return that promise in promise chain otherwise we loss data
+//Whenever there's promise inside promise chain then we need to return that promise in promise chain otherwise we loss data
 
 /*
 fetchdata('api')
