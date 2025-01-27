@@ -39,7 +39,7 @@ console.log(areAnagrams("hello", "world")); // false
 
 /*------------------------------------+++++++++++++++++++++--------------------------------*/
 
-function isAnagram(sent1, sent2){
+function isAnagram(sent1, sent2){   
     let cleanSent1 = sent1.toLowerCase().replace(/[^\w]/g, '');
     let cleanSent2 = sent2.toLowerCase().replace(/[^\w]/g, '');
 
